@@ -1,0 +1,42 @@
+$colors: (
+  accent: #0d3f9b,
+  secondary: #062b70,
+);
+
+//for colirs
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
+.bg-accent {
+  background-color: color(accent);
+}
+.text-accent {
+  color: color(accent) !important;
+}
+.btn-accent {
+  background-color: color(accent);
+  color: #fff;
+
+  &:hover {
+    color:#fff;
+    background-color: color(secondary);
+  }
+}
+
+.fa-cog {
+  transition: all linear !important;
+  animation: rot 2s linear;
+}
+@keyframes rot {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(-360deg);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .alert {
+    background-color: #10bd97;
+  }
+}
